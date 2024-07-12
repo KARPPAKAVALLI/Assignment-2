@@ -7,8 +7,20 @@ public class QuadraticEquation {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the co-efficients ax^2+bx+c");
         double a= sc.nextDouble(), b= sc.nextDouble(), c= sc.nextDouble();
-        double x1=(-b+Math.sqrt(b*b-4*a*c))/2*a;
-        double x2=(-b-Math.sqrt(b*b-4*a*c))/2*a;
-        System.out.println("The roots are: x1 = "+x1+" x2 = "+x2);
+        double discriminant = b*b-4*a*c;
+        if(discriminant>=0){
+            double x1=(-b+Math.sqrt(discriminant))/2*a;
+            double x2=(-b-Math.sqrt(discriminant))/2*a;
+            System.out.println("The roots are:" );
+            System.out.println("x1 = "+x1);
+            System.out.println(" x2 = "+x2);
+        }
+        else{
+            double real=-b/(2*a);
+            double complex=Math.sqrt(-discriminant)/(2*a);
+            System.out.println("The roots are:" );
+            System.out.println("x1 = "+real+"+"+complex+"i");
+            System.out.println(" x2 = "+real+"-"+complex+"i");
+        }
     }
 }
